@@ -1,12 +1,9 @@
 export default {
   title: "Light",
   colors: {
-    primary: "#FAFA",
-    secondary: " #D3CDCD",
-    text: "#35352D",
-    btn_text: "#D3CDCD",
-    btn_shape: "#E5E4E0",
-    result: "#FA8A38",
-    select: "#A2B3E1",
+    background: "#F2F3F5",
+    text: "#191919",
+    special: "#2AA9E0",
+    second_background: "#FFFFFF",
   },
 };

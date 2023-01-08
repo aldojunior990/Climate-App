@@ -23,8 +23,7 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
     body{
-        background-color: ${(props) => props.theme.colors.primary};
-        border: 1px solid red;
+        background-color: ${(props) => props.theme.colors.background};
         input {
         &:focus{
             box-shadow: 0 0 0 0;
@@ -32,9 +31,5 @@ export const GlobalStyle = createGlobalStyle`
         }
     }   
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     }
 `;
