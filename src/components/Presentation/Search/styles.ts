@@ -32,4 +32,11 @@ export const Container = styled.div`
       filter: brightness(1.1);
     }
   }
+
+  .erroMessage {
+    color: red;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
 `;

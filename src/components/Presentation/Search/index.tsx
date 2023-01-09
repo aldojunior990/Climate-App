@@ -1,15 +1,16 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { MyUseContext } from "../../../hooks/myUseContext";
 import { Container } from "./styles";
 
 export function Search() {
-  const { search, setSearch } = MyUseContext();
+  const { error, setError, setSearch } = MyUseContext();
   const [value, setValue] = useState<string>("");
 
   function handleNewSearch(event: FormEvent) {
     event.preventDefault();
     setSearch(value);
     setValue("");
+    setError(false);
   }
 
   return (
@@ -23,6 +24,7 @@ export function Search() {
         />
         <input type="submit" value="Buscar" />
       </form>
+      {error && <p className="erroMessage">Cidade não encontrada!</p>}
     </Container>
   );
 }

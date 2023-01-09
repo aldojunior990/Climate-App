@@ -8,8 +8,9 @@ interface dataProps {
   wind_speed: string;
   city_name: string;
   country: string;
-  condition: string;
   date: string;
+  min_temp: string;
+  max_temp: string;
 }
 
 export function ResultContainer() {
