@@ -24,6 +24,7 @@ interface ContextData {
   data: dataProps | null;
   error: boolean;
   setError: (error: boolean) => void;
+  getApiKey: (apiKey: string) => void;
 }
 
 interface ContextProviderProps {
@@ -37,11 +38,18 @@ export function ContextProvider({ children }: ContextProviderProps) {
   const [data, setData] = useState<dataProps | null>(null);
   const [error, setError] = useState<boolean>(false);
 
+  const [apiKey, setApiKey] = useState<string>("");
+
+  function getApiKey(key: string) {
+    setApiKey(key);
+  }
+
   useEffect(() => {
     if (search === "") return;
+    if (apiKey === "") return;
     get();
     api
-      .get(`weather?q=${search}&appid=${process.env.NEXT_APP_API_KEY}`)
+      .get(`weather?q=${search}&appid=${apiKey?.toString()}`)
       .then((response) => {
         setData({
           city_name: search,
@@ -68,7 +76,9 @@ export function ContextProvider({ children }: ContextProviderProps) {
   }, [search]);
 
   return (
-    <Context.Provider value={{ search, setSearch, data, error, setError }}>
+    <Context.Provider
+      value={{ search, setSearch, data, error, setError, getApiKey }}
+    >
       {children}
     </Context.Provider>
   );
