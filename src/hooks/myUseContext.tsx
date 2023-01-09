@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import api from "../services/api";
+import api, { get } from "../services/api";
 
 interface dataProps {
   temperature: string;
@@ -39,8 +39,9 @@ export function ContextProvider({ children }: ContextProviderProps) {
 
   useEffect(() => {
     if (search === "") return;
+    get();
     api
-      .get(`weather?q=${search}&appid=e9e87763b2eaf45045a5d47b74aaa9b4`)
+      .get(`weather?q=${search}&appid=${process.env.NEXT_APP_API_KEY}`)
       .then((response) => {
         setData({
           city_name: search,
