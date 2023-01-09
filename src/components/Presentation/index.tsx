@@ -6,7 +6,7 @@ export function Presentation() {
     <Container>
       <div className="box1">
         <p>
-          Explore as condições climaticas <br /> de qualquer região no planeta!
+          Explore as condições climaticas <br /> de qualquer região do planeta!
         </p>
         <Search />
       </div>
