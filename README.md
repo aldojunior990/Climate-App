@@ -12,7 +12,7 @@ Esta aplicação utiliza a api OpenWheather para buscar os dados meteorológicos
 </h1>
 
 <h1 align="center" display="flex">
-   <img height="500px" src=".github/image2.png">
+   <img height="500px" src=".github/image2.jpg">
 </h1>
 
 ## :computer: Tecnologias - Technologies
